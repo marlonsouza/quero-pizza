@@ -13,4 +13,13 @@ public enum StatusPedido {
 		this.description = description;
 		this.id = id;
 	}
+	
+	@Override
+	public String toString() {
+		return this.description;
+	}
+	
+	public Integer getId(){
+		return id;
+	}
 }

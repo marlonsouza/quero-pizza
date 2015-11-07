@@ -1,0 +1,27 @@
+#surefire
+#Sat Nov 07 08:58:07 BRST 2015
+testClassesDirectory=/home/marlon/eclipse/pos/queroPizza/target/test-classes
+classPathUrl.4=/home/marlon/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0.jar
+forkMode=once
+classPathUrl.3=/home/marlon/.m2/repository/com/google/guava/guava/18.0/guava-18.0.jar
+classPathUrl.2=/home/marlon/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar
+useManifestOnlyJar=true
+classPathUrl.1=/home/marlon/eclipse/pos/queroPizza/target/classes
+reportsDirectory=/home/marlon/eclipse/pos/queroPizza/target/surefire-reports
+classPathUrl.0=/home/marlon/eclipse/pos/queroPizza/target/test-classes
+providerConfiguration=org.apache.maven.surefire.junit.JUnit3Provider
+testSuiteDefinitionTestSourceDirectory=/home/marlon/eclipse/pos/queroPizza/src/test/java
+surefireClassPathUrl.1=/home/marlon/.m2/repository/org/apache/maven/surefire/surefire-api/2.10/surefire-api-2.10.jar
+surefireClassPathUrl.0=/home/marlon/.m2/repository/org/apache/maven/surefire/surefire-junit3/2.10/surefire-junit3-2.10.jar
+runOrder=filesystem
+useSystemClassLoader=true
+excludes0=**/*$*
+isTrimStackTrace=true
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+includes0=**/Test*.java
+childDelegation=false
+classPathUrl.6=/home/marlon/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar
+classPathUrl.5=/home/marlon/.m2/repository/com/sun/mail/javax.mail/1.5.1/javax.mail-1.5.1.jar
