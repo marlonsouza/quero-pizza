@@ -28,4 +28,8 @@ public class GenericDAO<T> {
 	public List<T> listar(Class<T> clazz){
 		return em.createQuery("FROM "+clazz.getName()).getResultList();
 	}
+	
+	public List<T> listar(Class<T> clazz, String where){
+		return em.createQuery("FROM "+clazz.getName()+where).getResultList();
+	}
 }

@@ -16,59 +16,47 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import quero.pizza.common.GenericDAO;
-import quero.pizza.pizzaria.Pizzaria;
+import quero.pizza.pizzaria.Cardapio;
 
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class PizzariaApi {
-	
-	
-	@Inject
-	private GenericDAO<Pizzaria> pizzariaDAO;
+public class CardapioApi {
 	
 	@Inject
-	private CardapioApi cardapioApi;
-	
+	private GenericDAO<Cardapio> cardapioDAO;
+
 	@GET
-	public Response listAll(){
+	public Response listaCardapio(@PathParam("idPizzaria") Long id){
+		List<Cardapio> cardapios = cardapioDAO.listar(Cardapio.class, "WHERE pizzaria = "+String.valueOf(id));
 		
-		List<Pizzaria> pizzarias = pizzariaDAO.listar(Pizzaria.class);
-		
-		return Response.ok(pizzarias).build();
-		
+		return Response.ok(cardapios).build();
 	}
 	
 	@GET
 	@Path("{id}")
-	public Response getPizza(@PathParam("id") Long id){
+	public Response getCardapio(@PathParam("id") Long id){
 		
-		return Response.ok(pizzariaDAO.buscar(id)).build();
-		
-	}
-	
-	@Path("{idPizzaria}/cardapio")
-	public CardapioApi getCardapioApi(){
-		
-		return cardapioApi;
+		return Response.ok(cardapioDAO.buscar(id)).build();
 		
 	}
 	
 	@POST
-	public Response insert(Pizzaria pizzaria){
+	public Response insert(Cardapio cardapio){
 		
-		Pizzaria saved = pizzariaDAO.save(pizzaria);
+		Cardapio toSave = cardapioDAO.save(cardapio);
 		
-		return Response.status(Status.CREATED).entity(saved).build();
-		
+		return Response.status(Status.CREATED).entity(toSave).build();
 	}
 	
 	@DELETE
 	@Path("{id}")
 	public Response delete(@PathParam("id") Long id){
 		
-		pizzariaDAO.excluir(id, Pizzaria.class);
+		cardapioDAO.excluir(id, Cardapio.class);
 		
 		return Response.ok().build();
+		
 	}
+	
 }
