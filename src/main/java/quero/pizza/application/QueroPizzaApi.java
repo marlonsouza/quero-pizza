@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import quero.pizza.pessoas.api.UsuarioApi;
 import quero.pizza.pizzaria.api.PizzariaApi;
 
 @Path("/")
@@ -16,9 +17,17 @@ public class QueroPizzaApi {
 	@Inject
 	private PizzariaApi pizzariaApi;
 	
+	@Inject
+	private UsuarioApi usuarioApi;
+	
 	@Path("pizzaria")
 	public PizzariaApi getPizzariaApi(){
 		return pizzariaApi;
+	}
+	
+	@Path("usuario")
+	public UsuarioApi getUsuarioApi(){
+		return usuarioApi;
 	}
 	
 }
