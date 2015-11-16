@@ -1,5 +1,8 @@
 package quero.pizza.vendas;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -17,6 +20,9 @@ import javax.persistence.Table;
 
 import quero.pizza.produtos.Item;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+
 @Entity
 @Table(name="pedidos")
 public class Pedido {
@@ -29,17 +35,34 @@ public class Pedido {
 	@JoinTable(name="itens_pedidos",
 			joinColumns=@JoinColumn(name="pedido_item"),
 			inverseJoinColumns=@JoinColumn(name="item_pedido"))
-	private List<Item> itens;
+	private List<Item> itens = Lists.newArrayList();
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name="status_pedido")
-	private StatusPedido status;
+	private StatusPedido status = StatusPedido.NOVO;
 	
 	@Column(name="data_pedido")
-	private LocalDate dataPedido;
+	private LocalDate dataPedido = LocalDate.now();
 	
 	@Column(name="valor_total")
-	private Double valorTotal;
+	private BigDecimal valorTotal = BigDecimal.ZERO;
+	
+	protected Pedido(){}
+	
+	private Pedido(List<Item> itens){
+		this.status = StatusPedido.NOVO;
+		this.itens.addAll(itens);
+		this.valorTotal = totalizarPedido(itens);
+	}
+
+	private BigDecimal totalizarPedido(List<Item> itens) {
+		return itens.stream().map(i -> i.getPreco()).reduce(BigDecimal.ZERO, BigDecimal::add);
+	}
+	
+	public static Pedido of(List<Item> itens){
+		checkNotNull(itens);
+		return new Pedido(itens);
+	}
 
 	public Long getId() {
 		return id;
@@ -49,14 +72,16 @@ public class Pedido {
 		this.id = id;
 	}
 
-	public List<Item> getItens() {
-		return itens;
+	public void setItem(List<Item> itens){
+		this.itens.clear();
+		this.itens.addAll(itens);
+		this.valorTotal = totalizarPedido(itens);
 	}
-
-	public void setItens(List<Item> itens) {
-		this.itens = itens;
+	
+	public List<Item> getItens(){
+		return ImmutableList.copyOf(itens);
 	}
-
+	
 	public StatusPedido getStatus() {
 		return status;
 	}
@@ -73,11 +98,11 @@ public class Pedido {
 		this.dataPedido = dataPedido;
 	}
 
-	public Double getValorTotal() {
+	public BigDecimal getValorTotal() {
 		return valorTotal;
 	}
 
-	public void setValorTotal(Double valorTotal) {
+	public void setValorTotal(BigDecimal valorTotal) {
 		this.valorTotal = valorTotal;
 	}
 	

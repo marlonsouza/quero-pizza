@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import quero.pizza.produtos.Item;
+import quero.pizza.produtos.Pizza;
 
 @Entity
 @Table(name="cardapios")
@@ -32,10 +32,10 @@ public class Cardapio {
 	
 
 	@OneToMany
-	@JoinTable(name="itens_cardapios",
-		joinColumns=@JoinColumn(name="cardapio_item"),
-		inverseJoinColumns=@JoinColumn(name="item_cardapio"))
-	private List<Item> itens;
+	@JoinTable(name="pizzas_cardapios",
+		joinColumns=@JoinColumn(name="cardapio_pizza"),
+		inverseJoinColumns=@JoinColumn(name="pizza_cardapio"))
+	private List<Pizza> pizzas;
 
 
 	public Long getId() {
@@ -68,12 +68,12 @@ public class Cardapio {
 	}
 
 
-	public List<Item> getItens() {
-		return itens;
+	public List<Pizza> getItens() {
+		return pizzas;
 	}
 
 
-	public void setItens(List<Item> itens) {
-		this.itens = itens;
+	public void setItens(List<Pizza> pizzas) {
+		this.pizzas = pizzas;
 	}
 }
