@@ -1,4 +1,4 @@
-###QUEROPIZZA
+###queroPIZZA
 
 ![Introductory images](http://static.splashnology.com/articles/45_Creative_Icon_Designs/Pizza_Icon_by_Creativedash.png)
 
