@@ -1,17 +1,15 @@
 package quero.pizza.application;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import quero.pizza.pessoas.api.UsuarioApi;
 import quero.pizza.pizzaria.api.PizzariaApi;
+import quero.pizza.produtos.api.BebidaApi;
+import quero.pizza.produtos.api.PizzaApi;
+import quero.pizza.vendas.api.PedidoApi;
 
 @Path("/")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class QueroPizzaApi {
 
 	@Inject
@@ -19,6 +17,15 @@ public class QueroPizzaApi {
 	
 	@Inject
 	private UsuarioApi usuarioApi;
+	
+	@Inject
+	private PedidoApi pedidoApi;
+	
+	@Inject
+	private PizzaApi pizzaApi;
+	
+	@Inject
+	private BebidaApi bebidaApi;
 	
 	@Path("pizzaria")
 	public PizzariaApi getPizzariaApi(){
@@ -28,6 +35,21 @@ public class QueroPizzaApi {
 	@Path("usuario")
 	public UsuarioApi getUsuarioApi(){
 		return usuarioApi;
+	}
+	
+	@Path("pedido")
+	public PedidoApi getPedidoApi(){
+		return pedidoApi;
+	}
+	
+	@Path("pizza")
+	public PizzaApi getPizzaApi(){
+		return pizzaApi;
+	}
+	
+	@Path("bebida")
+	public BebidaApi getBebidaApi(){
+		return bebidaApi;
 	}
 	
 }

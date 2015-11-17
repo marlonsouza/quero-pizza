@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.google.common.collect.ImmutableList;
+
 import quero.pizza.produtos.Pizza;
 
 @Entity
@@ -69,11 +71,12 @@ public class Cardapio {
 
 
 	public List<Pizza> getItens() {
-		return pizzas;
+		return ImmutableList.copyOf(pizzas);
 	}
 
 
 	public void setItens(List<Pizza> pizzas) {
-		this.pizzas = pizzas;
+		this.pizzas.clear();
+		this.pizzas.addAll(pizzas);
 	}
 }
