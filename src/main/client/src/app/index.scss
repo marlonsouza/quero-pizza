@@ -1,0 +1,651 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+
+@font-face {
+  font-family: 'Sofia';
+  src: url('fonts/sofiaproregular-webfont.eot');
+  src: url('fonts/sofiaproregular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sofiaproregular-webfont.woff') format('woff'), url('fonts/sofiaproregular-webfont.ttf') format('truetype'), url('fonts/sofiaproregular-webfont.svg#sofiaproregular-webfont') format('svg');
+}
+.sofia {
+  font-family: 'Sofia';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'SofiaB';
+  src: url('fonts/sofiaproblack-webfont.eot');
+  src: url('fonts/sofiaproblack-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sofiaproblack-webfont.woff') format('woff'), url('fonts/sofiaproblack-webfont.ttf') format('truetype'), url('fonts/sofiaproblack-webfont.svg#sofiaproblack-webfont') format('svg');
+}
+.sofiab {
+  font-family: 'SofiaB';
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'SofiaL';
+  src: url('fonts/sofiaprolight-webfont.eot');
+  src: url('fonts/sofiaprolight-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sofiaprolight-webfont.woff') format('woff'), url('fonts/sofiaprolight-webfont.ttf') format('truetype'), url('fonts/sofiaprolight-webfont.svg#sofiaprolight-webfont') format('svg');
+}
+.sofial {
+  font-family: 'SofiaL';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+HTML{
+  position: relative;
+  min-height: 100%;
+}
+
+BODY{
+  overflow-x:hidden;
+  margin-bottom: 60px;
+  background-color: #DDD0C8;
+}
+.coluna-teste1{
+  background-color:#0033FF;
+  height:50px;
+  text-align:center;
+}
+.coluna-teste2{
+  background-color:#666666;
+  height:50px;
+  text-align:center;
+}
+
+.container {
+  width: 1140px;
+  max-width: none !important;
+}
+
+.separador{
+  width:100%;
+  height:15px;
+}
+.separador30{
+  width:100%;
+  height:30px;
+}
+
+.separador50{
+  width:100%;
+  height:50px;
+}
+
+.separador70{
+  width:100%;
+  height:70px;
+}
+
+.separador100{
+  width:100%;
+  height:100px;
+}
+
+.centralizar{
+  text-align:center;
+}
+
+/*-------------------------------------- FONT SIZES*/
+.fsz42{
+  font-size:42px;
+}
+
+.fsz22{
+  font-size:22px;
+}
+
+.fsz18{
+  font-size:18px;
+}
+
+.fsz16{
+  font-size:16px;
+}
+
+.fsz14{
+  font-size:14px;
+}
+
+.fsz13{
+  font-size:13px;
+}
+
+.fsz12{
+  font-size:12px;
+}
+
+.upper{
+  text-transform:uppercase;
+}
+
+.linha28{
+  line-height:28px;
+}
+
+.btn-acesso{
+  width:100%;
+  margin-bottom:5px;
+  color: #fff;
+  background-color: #B46F45;
+  border-color: #B46F45;
+}
+
+.btn-acesso:hover {
+  color: #fff;
+  background-color: #76492E;
+  border-color: #76492E;
+}
+
+.btn-acesso:active:hover,
+.btn-acesso.active:hover,
+.open > .dropdown-toggle.btn-acesso:hover,
+.btn-acesso:active:focus,
+.btn-acesso.active:focus,
+.open > .dropdown-toggle.btn-acesso:focus,
+.btn-acesso:active.focus,
+.btn-acesso.active.focus,
+.open > .dropdown-toggle.btn-acesso.focus {
+  color: #fff;
+  background-color: #3C2517;
+  border-color: #3C2517;
+}
+
+.btn-procura:focus,
+.btn-procura.focus,
+.btn-acesso:focus,
+.btn-acesso.focus {
+  color: #fff;
+  background-color: #3C2517;
+  border-color: #3C2517;
+}
+
+.btn-procura{
+  color: #fff;
+  background-color: #B46F45;
+  border-color: #B46F45;
+}
+
+.btn-procura:hover {
+  color: #fff;
+  background-color: #76492E;
+  border-color: #76492E;
+}
+
+.btn-procura:active:hover,
+.btn-procura.active:hover,
+.open > .dropdown-toggle.btn-procura:hover,
+.btn-procura:active:focus,
+.btn-procura.active:focus,
+.open > .dropdown-toggle.btn-procura:focus,
+.btn-procura:active.focus,
+.btn-procura.active.focus,
+.open > .dropdown-toggle.btn-procura.focus {
+  color: #fff;
+  background-color: #3C2517;
+  border-color: #3C2517;
+}
+
+.marromPlus{
+  background-color:#76492E;
+}
+
+/* NAV-------------------------------------------------------------------------------NAV*/
+.navbar{
+  background-color:#76492E;
+  border-bottom-color:#76492E;
+  outline:hidden;
+}
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  min-width: 1140px !important;
+}
+
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #E6E6E6;
+  width:200px;
+}
+
+#navbar > ul > li > a{color: #FFFFFF;}
+#navbar > ul > li > a:hover{color: #e40521;}
+#navbar > ul > li > a:focus{color: #e40521;}
+
+.dropdown-menu{
+  border:none !important;
+}
+.dropdown-menu a{
+  color:#3C2517;
+  text-decoration:none;
+}
+
+.dropdown-menu a:hover{
+  color:#e40521;
+  text-decoration:none;
+}
+
+.dropdown-menu li{
+  padding:5px 0;
+}
+
+/* NAV-------------------------------------------------------------------------------NAV*/
+
+.floatEsq{
+  float:left;
+}
+
+.floatDir{
+  float:right;
+}
+
+.input-group-btn{
+  width:200px !important;
+  text-align:left;
+}
+
+.ocultar{
+  display:none;
+}
+
+.buscas{
+  margin-top:70px;
+}
+
+
+
+.rodape{
+  background-color:#76492E;
+  height:auto;
+}
+
+/*-------------------------------------- CORES FONTES*/
+
+.fonteCinzaMedio{
+  color:#878787;
+}
+
+.fonteCinzaEscuro{
+  color:#575757;
+}
+
+.fonteVermelha{
+  color:#e40521;
+}
+
+.fonteBranca{
+  color:#FFFFFF;
+}
+
+.fonteMarrom{
+  color:#76492E;
+}
+
+#searchBar, .busca-select{
+  border:1px solid #B46F45 !important;
+}
+
+.pizza-descricao{
+  border:1px solid #76492E;
+  padding:15px;
+  margin:0 0 15px 10px;
+  background-color:#FFFFFF;
+}
+
+.pizza-descricao IMG{
+  float:left;
+  padding-right:25px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #76492E;
+}
+
+.logotipo-pizzaria-pg{
+  padding:5px;
+  border:1px solid #76492E !important;
+  background-color:#FFFFFF;
+}
+
+.btn-default{
+  border:1px solid #76492E !important;
+  width:110px;
+}
+
+.btn-default:hover{
+  background-color:#C8BCB2;
+}
+
+.btn-default:active,
+.btn-default.active {
+  background-color: #C8BCB2;
+}
+
+.total{
+  border:1px solid #76492E;
+  background-color:#FFFFFF;
+  padding:20px 0;
+}
+
+.total button{
+  width:250px;
+  margin:5px 0 0 0;
+  color:#76492E;
+}
+
+.total button:hover{
+  color:#76492E;
+}
+
+.finaliza{
+  text-align:center;
+}
+
+.finaliza > .realizado{
+  font-size:22px;
+}
+
+.finaliza > .endereco-titulo{
+  font-size:18px;
+}
+
+.finaliza > .endereco{
+  font-size:20px;
+}
+
+.finaliza > .valor-pedido{
+  font-size:40px;
+  font-weight:bold;
+}
+
+.finaliza-voltar{
+  text-align:right;
+}
+
+
+.jimgMenu {
+  position: relative;
+  /*left:-40px;*/
+  width: 540px;
+  height: 210px;
+  overflow: hidden;
+  /*background-color:#0F0;*/
+  /*	margin: 25px 0px 0px;*/
+}
+
+.jimgMenu ul {
+  position: relative;
+  left:-40px;
+  list-style: none;
+  margin: 0px;
+  display: block;
+  height: 210px;
+  width: 1340px;
+
+}
+
+.jimgMenu ul li {
+  float: left;
+}
+
+.jimgMenu ul li a {
+  text-indent: -1000px;
+  /*border-right: 2px solid #fff;*/
+  cursor:pointer;
+  display:block;
+  overflow:hidden;
+  width:82px;
+  height: 210px;
+}
+
+.jimgMenu ul li.capa1 a {
+  background: url(../images/icon-ebook2.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.capa2 a {
+  background: url(../images/icon-ebook.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.capa3 a {
+  background: url(images/icon-emag3.jpg) repeat scroll 0%;
+}
+.jimgMenu ul li.capa4 a {
+  background: url(images/icon-emag2.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.capa5 a {
+  background: url(images/icon-emag.jpg) repeat scroll 0%;
+  min-width:215px;
+
+}
+
+.clear {
+  clear: both;
+}
+
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  width:1110px;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+/** THEME
+===================================*/
+/*.bx-wrapper {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: 5px solid #fff;
+  background: #fff;
+}*/
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #FFFFFF;
+  border:2px solid #FFF;
+  text-indent: -9999px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  outline: 0;
+  /*-moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;*/
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #CC0000;
+  border:2px solid #FFF;
+}
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url('images/controls.png') no-repeat 0 -32px;
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url('images/controls.png') no-repeat -43px -32px;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

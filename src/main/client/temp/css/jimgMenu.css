@@ -1,0 +1,60 @@
+
+.jimgMenu {
+	position: relative;
+	/*left:-40px;*/
+	width: 540px;
+	height: 210px;
+	overflow: hidden;
+	/*background-color:#0F0;*/
+/*	margin: 25px 0px 0px;*/
+}
+
+.jimgMenu ul {
+	position: relative;
+	left:-40px;
+	list-style: none;
+	margin: 0px;
+	display: block;
+	height: 210px;
+	width: 1340px;
+	
+	}
+
+.jimgMenu ul li {
+	float: left;
+}
+
+.jimgMenu ul li a {
+	text-indent: -1000px;
+	/*border-right: 2px solid #fff;*/
+	cursor:pointer;
+	display:block;
+	overflow:hidden;
+	width:82px;
+	height: 210px;
+}
+
+.jimgMenu ul li.capa1 a {
+	background: url(../images/icon-ebook2.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.capa2 a {
+	background: url(../images/icon-ebook.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.capa3 a {
+	background: url(../images/icon-emag3.jpg) repeat scroll 0%;
+}
+.jimgMenu ul li.capa4 a {
+	background: url(../images/icon-emag2.jpg) repeat scroll 0%;
+}
+
+.jimgMenu ul li.capa5 a {
+	background: url(../images/icon-emag.jpg) repeat scroll 0%;
+	min-width:215px;
+	
+}
+
+.clear {
+	clear: both;
+}

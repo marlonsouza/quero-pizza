@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 separador50 centralizar"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 centralizar"><img src="assets/images/pizzaria.png" height="200"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-4"></div>
+
+    <div class="col-xs-4">
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <form name="vm.form">
+            <div class="form-group">
+              <label class="sofia fsz18">Nome</label>
+              <input type="text" class="form-control" placeholder="Nome Pizzaria" ng-model="vm.pizzaria.nome">
+            </div>
+            <div class="form-group">
+              <label for="telefone" class="sofia fsz18">Telefone</label>
+              <input type="text" class="form-control" id="telefone" placeholder="Telefone" ng-model="vm.pizzaria.telefone">
+            </div>
+            <button type="submit" class="btn btn-primary sofia fsz18 btn-acesso"
+                    ng-click="vm.cadastrar(vm.pizzaria)">Cadastrar</button>
+          </form>
+        </div>
+        <div class="col-xs-2"></div>
+      </div>
+    </div>
+
+    <div class="col-xs-4"></div>
+  </div>
+</div>
+

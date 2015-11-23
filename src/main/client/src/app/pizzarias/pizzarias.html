@@ -1,0 +1,95 @@
+<nav class="navbar navbar-default navbar-fixed-top sofia">
+  <div class="container">
+
+    <div class="navbar-header marromPlus">
+      <img src="assets/images/logotipo-quero-pizza-ext.png" width="248" height="48" class="floatEsq">
+    </div>
+
+    <div id="navbar" class="navbar-right">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            João <span class="glyphicon glyphicon-user"></span>
+          </a>
+          <div class="dropdown-menu row">
+            <ul class="col-xs-12 list-unstyled">
+              <li><a href="#">Ver pedidos</a></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div><!--CONTEINER-->
+</nav>
+
+<div class="container buscas">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-4">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control" id="searchBar" placeholder="BUSCAR" />
+              <span class="input-group-btn">
+                  <button type="submit" class="btn btn-info btn-procura" value="Procurar">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2"></div>
+        <div class="col-xs-1"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="separador30"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1 sofia"></div>
+    <div class="col-xs-10 sofia fsz18">Pizzas:</div>
+    <div class="col-xs-1 sofia"></div>
+  </div>
+</div>
+</div>
+
+<div class="separador"></div>
+
+<div class="container lista-pizzarias">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col col-xs-2">
+      <button class="btn btn-primary sofia fsz18 btn-acesso" ui-sref="cadastro-pizzaria">Nova Pizzaria</button>
+    </div>
+  </div>
+  <div class="row"></div>
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+
+      <div ng-repeat="pizzariasGroup in vm.pizzarias track by $index">
+        <div class="row" >
+          <div class="col-xs-3" ng-repeat="pizzaria in pizzariasGroup track by $index" ng-click="vm.selecionar(pizzaria)">
+            <div class="row">
+              <div class="text-center">
+                <b>{{pizzaria.nome}}</b>
+              </div>
+            </div>
+            <div class="row">
+              <img src="assets/images/pizzaria.png">
+            </div>
+          </div>
+        </div>
+        <div class="separador30"></div>
+      </div>
+    </div>
+    <div class="col-xs-1"></div>
+  </div>
+</div>
+
+

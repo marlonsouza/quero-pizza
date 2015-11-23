@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 separador50 centralizar"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 centralizar"><img src="assets/images/logotipo-quero-pizza-200.png" height="200"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-4"></div>
+
+    <div class="col-xs-4">
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <form>
+            <div class="form-group">
+              <label for="email" class="sofia fsz18">Usuário</label>
+              <input type="email" class="form-control" id="email" placeholder="Usuário" ng-model="vm.usuario.usuario">
+            </div>
+            <div class="form-group">
+              <label for="senha" class="sofia fsz18">Senha</label>
+              <input type="password" class="form-control" id="senha" placeholder="Senha" ng-model="vm.usuario.senha">
+            </div>
+            <button type="submit" class="btn btn-primary sofia fsz18 btn-acesso"
+                    ng-click="vm.logar(usuario)">QueroPizza!</button>
+            <button type="submit" class="btn btn-primary sofia fsz18 btn-acesso"
+                    ng-click="vm.registrarUsuario()">Não sou cadastrado</button>
+          </form>
+        </div>
+        <div class="col-xs-2"></div>
+      </div>
+    </div>
+
+    <div class="col-xs-4"></div>
+  </div>
+</div>
