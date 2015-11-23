@@ -25,7 +25,7 @@ public class CardapioApi extends GenericApi<Cardapio> {
 
 	@GET
 	public Response list(@PathParam("idPizzaria") Long id){
-		List<Cardapio> cardapios = cardapioDAO.listar(Cardapio.class, "WHERE pizzaria = "+String.valueOf(id));
+		List<Cardapio> cardapios = cardapioDAO.listar(Cardapio.class, " WHERE pizzaria = "+String.valueOf(id));
 		
 		return Response.ok(cardapios).build();
 	}

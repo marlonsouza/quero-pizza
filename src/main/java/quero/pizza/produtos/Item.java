@@ -1,6 +1,7 @@
 package quero.pizza.produtos;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import java.io.Serializable;
 
 import java.math.BigDecimal;
 
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="itens")
 @Inheritance(strategy=InheritanceType.JOINED)
-public class Item {
+public class Item implements Serializable {
 	
 	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Column(name="i_item")
@@ -29,7 +30,7 @@ public class Item {
 	private BigDecimal preco;
 
 	public Long getId() {
-		return id;
+            return id;
 	}
 	
 	protected Item(){}

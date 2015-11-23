@@ -5,14 +5,16 @@
     angular.module('app.cardapio')
         .controller('CardapioController', CardapioController);
 
-    CardapioController.$inject = ['$injector', '$scope'];
+    CardapioController.$inject = ['$injector', '$state'];
 
-    function CardapioController($injector, $scope) {
+    function CardapioController($injector, $state) {
         var vm = this;
         var CardapioService = $injector.get('CardapioService');
+        var TransferService = $injector.get('TransferService');
 
         vm.montarPedido = montarPedido;
         vm.saveCardapio = saveCardapio;
+        vm.addPizza = addPizza;
 
         init();
 
@@ -22,6 +24,11 @@
           CardapioService.get().then(function(data){
             vm.cardapio = data || {};
           });
+        }
+
+        function addPizza(){
+          TransferService.setModel(vm.cardapio);
+          $state.go('nova-pizza');
         }
 
         function saveCardapio(cardapio){
@@ -34,9 +41,6 @@
 
         }
 
-        $scope.$on('REFRESH::CARDAPIO', function(event, data){
-          saveCardapio(data);
-        });
     }
 
 })();

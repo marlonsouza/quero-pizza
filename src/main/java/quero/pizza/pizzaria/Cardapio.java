@@ -14,12 +14,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import java.io.Serializable;
 
 import quero.pizza.produtos.Pizza;
 
 @Entity
 @Table(name="cardapios")
-public class Cardapio {
+public class Cardapio implements Serializable {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="i_cardapio")
@@ -37,7 +39,7 @@ public class Cardapio {
 	@JoinTable(name="pizzas_cardapios",
 		joinColumns=@JoinColumn(name="cardapio_pizza"),
 		inverseJoinColumns=@JoinColumn(name="pizza_cardapio"))
-	private List<Pizza> pizzas;
+	private List<Pizza> pizzas = Lists.newArrayList();
 
 
 	public Long getId() {
