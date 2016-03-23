@@ -2,7 +2,7 @@
 
 ![Introductory images](http://static.splashnology.com/articles/45_Creative_Icon_Designs/Pizza_Icon_by_Creativedash.png)
 
-[Trello Project](https://trello.com/b/0I0nIZXJ/querupizza-opensouce-project)
+<a href="https://trello.com/b/0I0nIZXJ/querupizza-opensouce-project" target="_blank">Trello Project</a>
 
 - /api
   + /usuario
