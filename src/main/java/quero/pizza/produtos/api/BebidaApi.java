@@ -7,10 +7,8 @@ import quero.pizza.produtos.Bebida;
 @Stateless
 public class BebidaApi extends GenericApi<Bebida> {
 
-	@Override
-	protected Class<Bebida> getType() {
-		return Bebida.class;
-	}
-	
-
+    @Override
+    protected Class<Bebida> getType() {
+        return Bebida.class;
+    }
 }
