@@ -22,88 +22,91 @@ import quero.pizza.produtos.Item;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import java.io.Serializable;
 
 @Entity
-@Table(name="pedidos")
-public class Pedido {
-	
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="i_pedido")
-	private Long id;
+@Table(name = "pedidos")
+public class Pedido implements Serializable {
 
-	@OneToMany
-	@JoinTable(name="itens_pedidos",
-			joinColumns=@JoinColumn(name="pedido_item"),
-			inverseJoinColumns=@JoinColumn(name="item_pedido"))
-	private List<Item> itens = Lists.newArrayList();
-	
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name="status_pedido")
-	private StatusPedido status = StatusPedido.NOVO;
-	
-	@Column(name="data_pedido")
-	private LocalDate dataPedido = LocalDate.now();
-	
-	@Column(name="valor_total")
-	private BigDecimal valorTotal = BigDecimal.ZERO;
-	
-	protected Pedido(){}
-	
-	private Pedido(List<Item> itens){
-		this.status = StatusPedido.NOVO;
-		this.itens.addAll(itens);
-		this.valorTotal = totalizarPedido(itens);
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "i_pedido")
+    private Long id;
 
-	private BigDecimal totalizarPedido(List<Item> itens) {
-		return itens.stream().map(i -> i.getPreco()).reduce(BigDecimal.ZERO, BigDecimal::add);
-	}
-	
-	public static Pedido of(List<Item> itens){
-		checkNotNull(itens);
-		return new Pedido(itens);
-	}
+    @OneToMany
+    @JoinTable(name = "itens_pedidos",
+            joinColumns = @JoinColumn(name = "pedido_item"),
+            inverseJoinColumns = @JoinColumn(name = "item_pedido"))
+    private List<Item> itens = Lists.newArrayList();
 
-	public Long getId() {
-		return id;
-	}
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "status_pedido")
+    private StatusPedido status = StatusPedido.NOVO;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "data_pedido")
+    private LocalDate dataPedido = LocalDate.now();
 
-	public void setItem(List<Item> itens){
-		this.itens.clear();
-		this.itens.addAll(itens);
-		this.valorTotal = totalizarPedido(itens);
-	}
-	
-	public List<Item> getItens(){
-		return ImmutableList.copyOf(itens);
-	}
-	
-	public StatusPedido getStatus() {
-		return status;
-	}
+    @Column(name = "valor_total")
+    private BigDecimal valorTotal = BigDecimal.ZERO;
 
-	public void setStatus(StatusPedido status) {
-		this.status = status;
-	}
+    protected Pedido() {
+    }
 
-	public LocalDate getDataPedido() {
-		return dataPedido;
-	}
+    private Pedido(List<Item> itens) {
+        this.status = StatusPedido.NOVO;
+        this.itens.addAll(itens);
+        this.valorTotal = totalizarPedido(itens);
+    }
 
-	public void setDataPedido(LocalDate dataPedido) {
-		this.dataPedido = dataPedido;
-	}
+    private BigDecimal totalizarPedido(List<Item> itens) {
+        return itens.stream().map(i -> i.getPreco()).reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
 
-	public BigDecimal getValorTotal() {
-		return valorTotal;
-	}
+    public static Pedido of(List<Item> itens) {
+        checkNotNull(itens);
+        return new Pedido(itens);
+    }
 
-	public void setValorTotal(BigDecimal valorTotal) {
-		this.valorTotal = valorTotal;
-	}
-	
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setItem(List<Item> itens) {
+        this.itens.clear();
+        this.itens.addAll(itens);
+        this.valorTotal = totalizarPedido(itens);
+    }
+
+    public List<Item> getItens() {
+        return ImmutableList.copyOf(itens);
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
+    public LocalDate getDataPedido() {
+        return dataPedido;
+    }
+
+    public void setDataPedido(LocalDate dataPedido) {
+        this.dataPedido = dataPedido;
+    }
+
+    public BigDecimal getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
 }
